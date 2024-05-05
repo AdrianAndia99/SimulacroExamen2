@@ -8,7 +8,7 @@ public class EnemyGenerator : MonoBehaviour
     public static EnemyGenerator instance;
     public List<GameObject> enemies = new List<GameObject>();
     private float time_to_create = 5f;
-    private float actual_time = 0f;
+    private float ActualTime = 0f;
     private float limitSuperior;
     private float limitInferior;
     public List<GameObject> actualEnemy = new List<GameObject>();
@@ -28,13 +28,13 @@ public class EnemyGenerator : MonoBehaviour
 
     void Update()
     {
-        actual_time += Time.deltaTime;
-        if(time_to_create <= actual_time)
+        ActualTime += Time.deltaTime;
+        if(time_to_create <= ActualTime)
         {
             GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Count)],
             new Vector3(transform.position.x, Random.Range(limitInferior, limitSuperior), 0f), Quaternion.identity);
             enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(-3f, 0);
-            actual_time = 0f;
+            ActualTime = 0f;
             actualEnemy.Add(enemy);
         }
     }

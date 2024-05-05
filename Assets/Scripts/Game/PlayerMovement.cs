@@ -39,5 +39,9 @@ public class PlayerMovement : MonoBehaviour
         {
             EnemyGenerator.instance.ManageEnemy(other.gameObject.GetComponent<EnemyController>(), this);
         }
+        if(other.tag == "Power")
+        {
+            PowerGenerator.instance.ManagePower(other.gameObject.GetComponent<PowerController>(), this);
+        }
     }
 }

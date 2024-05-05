@@ -6,15 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public Button btnPlay;
-    // Start is called before the first frame update
-    void Start()
+    public void CambiarEscena(string nombreDeLaEscena)
     {
-        btnPlay.onClick.AddListener(() => Play());
-    }
-
-    void Play()
-    {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(nombreDeLaEscena);
     }
 }
