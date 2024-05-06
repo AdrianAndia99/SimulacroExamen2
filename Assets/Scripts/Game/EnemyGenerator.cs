@@ -55,7 +55,7 @@ public class EnemyGenerator : MonoBehaviour
 
         int lives = playerScript.player_lives;
         int liveChange = enemyScript.lifeChanges;
-        lives -= liveChange;
+        lives += liveChange;
         print(lives);
 
         if (lives <= 0)
