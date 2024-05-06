@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public int player_lives = 3;
     public AudioSource AudioSource1;
     public AudioSource AudioSource2;
+    public AudioSource AudioSource3;
     void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         if(other.tag == "Power")
         {
             PowerGenerator.instance.ManagePower(other.gameObject.GetComponent<PowerController>(), this);
+            AudioSource3.Play();
         }
     }
 }
